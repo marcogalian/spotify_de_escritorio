@@ -4,6 +4,7 @@ import com.marcog.spotify_de_escritorio.model.Cancion;
 import com.marcog.spotify_de_escritorio.model.Usuario;
 import com.marcog.spotify_de_escritorio.repository.CancionRepository;
 import com.marcog.spotify_de_escritorio.repository.UsuarioRepository;
+import com.marcog.spotify_de_escritorio.util.SessionManager;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
