@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Data
@@ -18,6 +19,6 @@ public class Usuario {
     private String nombre;
     private String email;
 
-    // Guardar los objetos canción Completos
-    private List<Cancion> cancionesFavoritas;
+    // Inicializo con un ArrayList vacío para evitar NullPointerException
+    private List<Cancion> cancionesFavoritas = new ArrayList<>();
 }
