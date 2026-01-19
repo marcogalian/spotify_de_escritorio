@@ -11,8 +11,8 @@ public interface CancionRepository extends MongoRepository<Cancion, String> {
     @Query("{ 'listaGeneros' :  { '$all' :  ['Rock', 'Clasico']}} ")
     List<Cancion> buscarRockClasico();
 
-    // Buscador Rápido (Búsqueda por artista y duración < 3 minutos)
-    // El nombre del artista viene del TextField (?0) y el tiempo es fijo (< 3.0)
-    @Query("{ 'artista':  ?0, 'duracion': {'$lt':  3.0 }}")
-    List<Cancion> bucarParaRadio(String artista);
+    // Buscador Rápido con el estilo del profesor
+    // Usamos $regex para que busque nombres similares y $options: 'i' para ignorar mayúsculas
+    @Query("{ 'artista': { '$regex': ?0, '$options': 'i' }, 'duracion': { '$lt': 3.0 } }")
+    List<Cancion> buscarParaRadio(String artista);
 }
