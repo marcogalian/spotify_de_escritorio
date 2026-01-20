@@ -16,7 +16,7 @@ public class SpotifyService {
     private final CancionRepository cancionRepository;
     private final UsuarioRepository usuarioRepository;
 
-    // Botón "Me gusta"
+    // Botón Me gusta
     public void agregarAFavoritos(Cancion cancionSeleccionada){
         Usuario usuarioActual = SessionManager.usuarioActual;
 
