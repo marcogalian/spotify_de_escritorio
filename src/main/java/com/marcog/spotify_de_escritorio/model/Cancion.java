@@ -10,6 +10,7 @@ import java.util.List;
 
 @Data
 @Document(collection = "canciones")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cancion {
@@ -20,7 +21,4 @@ public class Cancion {
     private String album;
     private double duracion;
     private List<String> listaGeneros;
-
-    public static Object builder() {
-    }
 }
