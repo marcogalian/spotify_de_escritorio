@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox spacing="20" alignment="CENTER" xmlns:fx="http://javafx.com/fxml"
+      fx:controller="com.marcog.spotify_de_escritorio.controller.LoginController"
+      style="-fx-background-color: #121212;">
+
+    <padding><Insets top="40" right="40" bottom="40" left="40"/></padding>
+
+    <Label text="Spotify Desktop" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #1DB954;"/>
+    <Label text="Introduce tu cuenta para continuar" style="-fx-text-fill: #B3B3B3;"/>
+
+    <TextField fx:id="emailField" promptText="Email (ej: marco@spotify.com)" prefHeight="40"
+               style="-fx-background-color: #333333; -fx-text-fill: white; -fx-prompt-text-fill: #888; -fx-background-radius: 25; -fx-padding: 0 20;"/>
+
+    <Button text="ENTRAR" onAction="#handleLogin" maxWidth="Infinity" prefHeight="45"
+            style="-fx-background-color: #1DB954; -fx-text-fill: black; -fx-font-weight: bold; -fx-cursor: hand; -fx-background-radius: 25; -fx-font-size: 14;"/>
+</VBox>
