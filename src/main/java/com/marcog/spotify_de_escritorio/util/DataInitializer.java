@@ -5,13 +5,14 @@ import com.marcog.spotify_de_escritorio.model.Usuario;
 import com.marcog.spotify_de_escritorio.repository.CancionRepository;
 import com.marcog.spotify_de_escritorio.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Configuration;
 
 import java.util.List;
 
 @Configuration
 @RequiredArgsConstructor
-public class DataInitializer {
+public class DataInitializer implements CommandLineRunner {
 
     private final CancionRepository cancionRepository;
     private final UsuarioRepository usuarioRepository;

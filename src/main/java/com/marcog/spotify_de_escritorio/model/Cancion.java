@@ -21,7 +21,4 @@ public class Cancion {
     private String album;
     private double duracion;
     private List<String> listaGeneros;
-
-    public static Object builder() {
-    }
 }
