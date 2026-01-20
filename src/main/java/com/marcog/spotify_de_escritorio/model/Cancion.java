@@ -11,6 +11,7 @@ import java.util.List;
 @Data
 @Builder
 @Document(collection = "canciones")
+@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cancion {
