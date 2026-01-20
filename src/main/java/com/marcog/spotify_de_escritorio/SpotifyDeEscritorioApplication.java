@@ -27,7 +27,8 @@ public class SpotifyDeEscritorioApplication extends Application {
         loader.setControllerFactory(springContext::getBean);
 
         Parent root = loader.load();
-        stage.setScene((new Scene(root)));
+        Scene scene = new Scene(root, 400, 300);
+        stage.setScene(scene);
         stage.setTitle("Spotify de Escritorio - Ejercicio 1");
         stage.show();
     }

@@ -26,7 +26,8 @@ public class SpotifyController {
 
     @FXML
     public void initialize(){
-        // TODO cargar lista inicial aqui
+        List<Cancion> todas = spotifyService.obtenerTodas();
+        songListView.setItems(FXCollections.observableArrayList(todas));
     }
 
     @FXML
@@ -50,5 +51,22 @@ public class SpotifyController {
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
+    }
+
+    @FXML
+    public void handleArtistSearch() {
+        String busqueda = artistSearchField.getText();
+        // Llamamos al servicio que usa la @Query con regex
+        List<Cancion> resultados = spotifyService.buscarParaRadio(busqueda);
+
+        // Actualizamos la lista con los resultados encontrados
+        songListView.setItems(FXCollections.observableArrayList(resultados));
+    }
+
+    @FXML
+    public void handleReset() {
+        artistSearchField.clear(); // Limpiamos el texto de búsqueda
+        List<Cancion> todas = spotifyService.obtenerTodas();
+        songListView.setItems(FXCollections.observableArrayList(todas));
     }
 }

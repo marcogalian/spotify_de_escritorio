@@ -34,5 +34,9 @@ public class SpotifyService {
     public List<Cancion> buscarParaRadio(String artista){
         return cancionRepository.buscarParaRadio(artista);
     }
+
+    public List<Cancion> obtenerTodas() {
+        return cancionRepository.findAll();
+    }
 }
 

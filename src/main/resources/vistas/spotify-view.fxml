@@ -31,4 +31,6 @@
             maxWidth="Infinity"
             style="-fx-background-color: #1DB954; -fx-text-fill: white;"/>
 
+    <Button text="Mostrar Todas" onAction="#handleReset" maxWidth="Infinity"/>
+
 </VBox>

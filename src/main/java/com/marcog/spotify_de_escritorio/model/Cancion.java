@@ -11,7 +11,6 @@ import java.util.List;
 @Data
 @Builder
 @Document(collection = "canciones")
-@Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class Cancion {
@@ -22,4 +21,9 @@ public class Cancion {
     private String album;
     private double duracion;
     private List<String> listaGeneros;
+
+    @Override
+    public String toString() {
+        return titulo + " - " + artista + " (" + album + ")";
+    }
 }
