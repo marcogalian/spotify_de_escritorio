@@ -16,7 +16,23 @@ public class SpotifyService {
     private final CancionRepository cancionRepository;
     private final UsuarioRepository usuarioRepository;
 
-    // Botón Me gusta
+    /**
+     * Lógica profesional de Login:
+     * El servicio valida la existencia y gestiona la sesión.
+     */
+    public Usuario login(String email) {
+        Usuario usuario = usuarioRepository.findByEmail(email);
+
+        if (usuario == null) {
+            // En empresas se suelen usar excepciones personalizadas
+            throw new RuntimeException("Credenciales no válidas");
+        }
+
+        // Si es válido, el servicio establece la sesión
+        SessionManager.usuarioActual = usuario;
+        return usuario;
+    }
+
     public void agregarAFavoritos(Cancion cancionSeleccionada){
         Usuario usuarioActual = SessionManager.usuarioActual;
 
@@ -26,7 +42,6 @@ public class SpotifyService {
         }
     }
 
-    // Filtro combinado "Modo Rock Clásico"
     public List<Cancion> obtenerRockClasico() {
         return cancionRepository.buscarRockClasico();
     }
@@ -39,4 +54,3 @@ public class SpotifyService {
         return cancionRepository.findAll();
     }
 }
-
